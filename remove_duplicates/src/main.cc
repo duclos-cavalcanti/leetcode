@@ -4,20 +4,20 @@
 
 class Solution {
 public:
-    int removeDuplicates(std::vector<int>& nums) {
-        int cur = -1;
-        int last = cur;
-        for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); ++it) {
-            cur = *it;
-            if (cur == last) {
-                nums.erase(it);
-                --it;
-            }
-            last = cur;
-        }
-
-        return nums.size();
+  int removeDuplicates(std::vector<int>& nums) {
+    int cur = -1;
+    int last = cur;
+    for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); ++it) {
+      cur = *it;
+      if (cur == last) {
+        nums.erase(it);
+        --it;
+      }
+      last = cur;
     }
+    
+    return nums.size();
+  }
 };
 
 int main() {
