@@ -1,0 +1,5 @@
+# CMAKE
+# build/*
+cmake/*
+bin/*
+.cache/*
