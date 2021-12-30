@@ -3,6 +3,10 @@
 #include <stack>
 #include <string>
 
+#include <iostream>
+#include <vector>
+#include <string>
+
 class Solution {
 public:
   bool isPalindrome(int x) {
@@ -11,24 +15,11 @@ public:
     } else if (x == 0) {
       return true;
     } else {
-      std::stack<char> st;
       std::string str = std::to_string(x);
-
-      int lim;
       int total = str.length();
-      int half = total / 2;
 
-
-      lim = total % 2 == 0 ? half : half + 1;
-
-      for (int i = 0; i < half; i++) {
-        st.push(str[i]);
-      }
-
-      for (int i = lim ; i < total; i++) {
-        char c = st.top();
-        st.pop();
-        if (c != str[i]) // not palindrome
+      for (int i = 0 ; i < total/2; i++) {
+        if (str[total - 1 - i] != str[i]) // not palindrome
           return false;
       }
       return true;
